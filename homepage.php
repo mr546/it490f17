@@ -143,7 +143,7 @@ body {margin: 0;}
 <div class="div1">
 <center>
 <form action="bet.php" method="get">
-  <font face="impact"color="black" size="5"><b>Quarterback</b></font>
+  <font face="impact" color="black" size="5"><b>Quarterback</b></font>
   <br>
   <select id = "qb" name="qb" style="width: 200px; border: 0px solid; padding: 5px; color: #000; background-color: #f1f1f1;  font-family: calibri; text-transform: uppercase; font-size: 10px; letter-spacing: 1px;">
 <option value="">Quarterback</option>
@@ -321,7 +321,7 @@ body {margin: 0;}
 <div class="div3">
 <center>
 <form action="bet.php" method="get">
-  <font face="impact"color="black" size="5"><b>Wide receiver</b></font>
+  <font face="impact" color="black" size="5"><b>Wide receiver</b></font>
   <br>
   <select id = "wr" name="wr" style="width: 200px; border: 0px solid; padding: 5px; color: #000; background-color: #f1f1f1;  font-family: calibri; text-transform: uppercase; font-size: 10px; letter-spacing: 1px;">
 <option value="">Wide receiver</option>
