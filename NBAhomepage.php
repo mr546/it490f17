@@ -8,17 +8,17 @@ body {margin: 0;}
   background-color: black;
   background-position: right bottom;
   background-repeat: repeat;
-  padding: .5px;
+  padding: 1px;
 }
 .topnav{
     overflow: hidden;
     background-color:black;
     }
 .topnav a{
-    float: left;
-    display: block;
+    float: center;
+    display: inline;
     color: white;
-    text-align: center;
+    /**text-align: center;**/
     padding: 5px 10px;
     text-decoration: none;
     font-size: 10px;
@@ -27,11 +27,11 @@ body {margin: 0;}
     background-color: lightblue;
     color: white;
 }
-.topnav a.active{
+/**.topnav a.active{
     background-color: #ee2211;
     color: red;
-}   
-.box1{
+} **/
+/**.box1{
     position: relative;
     margin: auto;
     float: center;
@@ -43,22 +43,24 @@ body {margin: 0;}
     padding-left: .5cm;
     padding-top: .05cm;
     padding-bottom: .8cm;
-}
-    
+}**/
+ 
 </style>
 
 </head>
 
 <body>
+<center>
 <div id = "css1">
 <h3><font face="georgia" size="5" color="white">Kehoe's Bros Betting</font></h3>
     <div class="topnav" id="firstTopNav">
-        <a href="NBAhomepage.php">HOME</a>
+        <a href="pickaSport.php">HOME</a>
         <a href="NBAdeposit.php">DEPOSIT</a>
         <a href="about.php">ABOUT</a>
         <a href="NBAcompareResults.php">RESULTS</a>
     </div>
 </div>
+</center>
 </body>
 </style>
 
@@ -88,7 +90,8 @@ body {margin: 0;}
     float: center;
     width: 23%;
     height: 250px;
-    background-color: black;
+    background-color: black| transparent;
+    background: rgba(225, 225, 225, .5)
 }
 
 </style>
@@ -103,7 +106,7 @@ body {margin: 0;}
 <center>
 <br>
 <form action="NBAbet.php" method="get">
-  <font face="impact" color="white" size="5"><b>Select 3 Teams</b></font>
+  <font face="impact" color="black" size="5"><b>Select Teams:</b></font>
   <br><br>
   <select id = "basketball" name="basketball" style="width: 200px; border: 0px solid; padding: 5px; color: #000; background-color: #f1f1f1;  font-family: calibri; text-transform: uppercase; font-size: 10px; letter-spacing: 1px;">
 <option value="">TEAMS</option>
