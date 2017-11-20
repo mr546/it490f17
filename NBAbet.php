@@ -1,52 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Kehoe's Bros Betting</title>
+<title>Kehoe's Bros Betting</title> 
 <style>
 body {margin: 0;}
 #css1{
-    background-color: black;
-    background-position: right bottom;
-    background-repeat: repeat;
-    padding: .5px;
-    }
+  background-color: black;
+  background-position: right bottom;
+  background-repeat: repeat;
+  padding: 1px;
+}
 .topnav{
     overflow: hidden;
     background-color:black;
     }
 .topnav a{
-    float: left;
-    display: block;
+    float: center;
+    display: inline;
     color: white;
-    text-align: center;
+    /**text-align: center;**/
     padding: 5px 10px;
     text-decoration: none;
     font-size: 10px;
     }
 .topnav a:hover{
     background-color: lightblue;
-    color: black;
+    color: white;
 }
-.topnav a.active{
+/**.topnav a.active{
     background-color: #ee2211;
     color: red;
-}   
-.box1{
+} **/
+/**.box1{
     position: relative;
     margin: auto;
     float: center;
-    width: 200px;
+    width: 400px;
     font-family:"georgia";
-    height: 150px;
-    background-color: black;
-    color: white;
+    height: 100px;
+    background-color: pink;
     text-align: left;
     padding-left: .5cm;
     padding-top: .05cm;
     padding-bottom: .8cm;
-}
-
-    
+}**/
+ 
 </style>
 
 </head>
@@ -62,17 +60,17 @@ body {margin: 0;}
 </style>
 
 <body>
+<center>
 <div id = "css1">
-<!--<h3><font face="georgia" size="5" color="white">Kehoe's Bros Betting</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font face="gerogia" size="5" color="white">Place Bets</font> </h3>-->
 <h3><font face="georgia" size="5" color="white">Kehoe's Bros Betting</font></h3>
-<!--<p><font face="georgia" size="2" color="white">Place Bets</font></p>-->
     <div class="topnav" id="firstTopNav">
-        <a href="NBAhomepage.php">HOME</a>
+        <a href="pickaSport.php">HOME</a>
         <a href="NBAdeposit.php">DEPOSIT</a>
         <a href="about.php">ABOUT</a>
-        <a href="compareResults.php">RESULTS</a>
+        <a href="NBAcompareResults.php">RESULTS</a>
     </div>
 </div>
+</center>
 </body>
 
 <body>
@@ -101,11 +99,13 @@ $_SESSION['basketball3'] = $basketball3;
     font-family:"georgia";
     height: 150px;
     background-color: black;
-    color: white;
+    color: black;
     text-align: left;
     padding-left: .5cm;
     padding-top: .05cm;
     padding-bottom: .8cm;
+    background-color: black| transparent;
+    background: rgba(225, 225, 225, .59);
 }
 
 </style>
@@ -114,7 +114,7 @@ $_SESSION['basketball3'] = $basketball3;
 <br>
 <body>
 <div class = "box1">
-<h2><font face="georgia" size="4" color="white"><center>Selected Team</center></font></h2>
+<h2><font face="georgia" size="4" color="black"><center>Selected Team</center></font></h2>
 <p>Team 1:     <?=$_SESSION['basketball']?></p>
 <p>Team 2:     <?=$_SESSION['basketball2']?></p>
 <p>Team 3:     <?=$_SESSION['basketball3']?></p>
@@ -127,9 +127,9 @@ $_SESSION['basketball3'] = $basketball3;
 <body>
 
 
-<form name="thisForm" action="NBAinsertBets.php" method="post" style="width: 410px; padding-bottom: .8cm; padding-top: .05cm; background-color: #000000;">
+<form name="thisForm" action="NBAinsertBets.php" method="post" style="width: 410px; padding-bottom: .8cm; padding-top: .05cm; background-color: #000000; background-color: black| transparent; background: rgba(225, 225, 225, .59);">
 
-<h2><font face="georgia" size="3" color="white"><center>Place your bet below</center></h2> 
+<h2><font face="georgia" size="3" color="black"><center>Place your bet below</center></h2> 
     
     
     <label><font size="2"><b>Bet Amount: </b></font></label>
