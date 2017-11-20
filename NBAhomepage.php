@@ -73,7 +73,7 @@ body {margin: 0;}
 <style>
     { margin: 0; padding: 0; }
     html {
-        background: url('http://www.twitrcovers.com/wp-content/uploads/2014/02/NBA-Tracy-McGrady-Athlete-l.jpg') no-repeat center center fixed;
+        background: url('https://images5.alphacoders.com/467/thumb-1920-467394.jpg') no-repeat center center fixed;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -91,7 +91,7 @@ body {margin: 0;}
     width: 23%;
     height: 250px;
     background-color: black| transparent;
-    background: rgba(225, 225, 225, .5)
+    background: rgba(225, 225, 225, .5);
 }
 
 </style>
