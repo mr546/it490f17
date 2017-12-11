@@ -30,7 +30,7 @@ body {margin: 0;}
 .topnav a.active{
     background-color: #ee2211;
     color: red;
-}   
+}  
 .box1{
     position: relative;
     margin: auto;
@@ -46,7 +46,7 @@ body {margin: 0;}
     padding-bottom: .8cm;
 }
 
-    
+   
 </style>
 
 </head>
@@ -88,7 +88,7 @@ $basketball3 = $_GET['basketball3'];
 require 'database1.php';
 $conn    = Connect();
 $bet    = $_POST['bet_amount'];
-$query   = "INSERT into user_bets (screenname,bet_amount,qb_pick,rb_pick,wr_pick) VALUES('" . "dc376" . "','" . $bet . "','" . $_SESSION["qb"] . "','" . $_SESSION["rb"] . "','" . $_SESSION["wr"] . "')";
+$query   = "INSERT into user_bets (screenname,bet_amount,basketball,basketball2,basketball3) VALUES('" . "dc376" . "','" . $bet . "','" . $_SESSION["basketball"] . "','" . $_SESSION["basketball2"] . "','" . $_SESSION["basketball3"] . "')";
 $success = $conn->query($query);
  
 //echo "<br><br>The QB is ". $_SESSION['qb'];
@@ -104,9 +104,9 @@ $conn->close();
 <br>
 <body>
 <div class = "box1">
-<p>The QB is <?=$_SESSION['basketball']?></p>
-<p>The RB is <?=$_SESSION['basketball2']?></p>
-<p>The WR is <?=$_SESSION['basketball3']?></p>
+<p>Team 1 pick is <?=$_SESSION['basketball']?></p>
+<p>Team 2 pick is <?=$_SESSION['basketball2']?></p>
+<p>Team 3 pick is <?=$_SESSION['basketball3']?></p>
 <p>The bet amount is <?=$bet?></p>
 </div>
 </body>
