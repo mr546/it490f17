@@ -15,10 +15,10 @@ body {margin: 0;}
     background-color:black;
     }
 .topnav a{
-    float: left;
-    display: block;
+    float: center;
+    display: inline;
     color: white;
-    text-align: center;
+    /**text-align: center;**/
     padding: 5px 10px;
     text-decoration: none;
     font-size: 10px;
@@ -30,7 +30,7 @@ body {margin: 0;}
 .topnav a.active{
     background-color: #ee2211;
     color: red;
-}  
+}   
 .box1{
     position: relative;
     margin: auto;
@@ -39,14 +39,17 @@ body {margin: 0;}
     font-family:"georgia";
     height: 120px;
     background-color: black;
-    color: white;
+    color: black;
+    border: 2px solid;
     text-align: left;
     padding-left: .5cm;
     padding-top: .05cm;
     padding-bottom: .8cm;
+    background-color: black| transparent;
+    background: rgba(225, 225, 225, .59);
 }
 
-   
+    
 </style>
 
 </head>
@@ -63,32 +66,36 @@ body {margin: 0;}
 
 <body>
 <div id = "css1">
-<h3><font face="georgia" size="5" color="white">Players Selected</font></h3>
+<center>
+<h3><font face="georgia" size="5" color="white">Kehoe's Bros Betting</font></h3>
     <div class="topnav" id="firstTopNav">
-        <a href="NBAhomepage.php">HOME</a>
-        <a href="NBAdeposit.php">DEPOSIT</a>
+        <a href="pickaSport.php">HOME</a>
+        <a href="deposit.php">DEPOSIT</a>
         <a href="about.php">ABOUT</a>
-        <a href="compareResults.php">RESULTS</a>
+        <a href="NBAcompareResults.php">RESULTS</a>
     </div>
+</center>
 </div>
 </body>
 
 <body>
 
 <?php session_start();
-$_SESSION['basketball'];
-$_SESSION['basketball2'];
-$_SESSION['basketball3'];
+$_SESSION['team1_pick'];
+$_SESSION['team2_pick'];
+$_SESSION['team3_pick'];
 ?>
 
 <?php
-$basketball1 = $_GET['basketball'];
-$basketball2 = $_GET['basketball2'];
-$basketball3 = $_GET['basketball3'];
+$team1_pick = $_GET['team1_pick'];
+$team2_pick = $_GET['team2_pick'];
+$team3_pick = $_GET['team3_pick'];
 require 'database1.php';
 $conn    = Connect();
 $bet    = $_POST['bet_amount'];
-$query   = "INSERT into user_bets (screenname,bet_amount,basketball,basketball2,basketball3) VALUES('" . "dc376" . "','" . $bet . "','" . $_SESSION["basketball"] . "','" . $_SESSION["basketball2"] . "','" . $_SESSION["basketball3"] . "')";
+$drop = "TRUNCATE TABLE user_bballbet";
+$success1 = $conn->query($drop);
+$query   = "INSERT into user_bballbet (screenname,bet_amount,team1_pick,team2_pick,team3_pick) VALUES('" . "dc376" . "','" . $bet . "','" . $_SESSION["team1_pick"] . "','" . $_SESSION["team2_pick"] . "','" . $_SESSION["team3_pick"] . "')";
 $success = $conn->query($query);
  
 //echo "<br><br>The QB is ". $_SESSION['qb'];
@@ -104,10 +111,10 @@ $conn->close();
 <br>
 <body>
 <div class = "box1">
-<p>Team 1 pick is <?=$_SESSION['basketball']?></p>
-<p>Team 2 pick is <?=$_SESSION['basketball2']?></p>
-<p>Team 3 pick is <?=$_SESSION['basketball3']?></p>
-<p>The bet amount is <?=$bet?></p>
+<p>Team 1 pick is <?=$_SESSION['team1_pick']?></p>
+<p>Team 2 pick is <?=$_SESSION['team2_pick']?></p>
+<p>Team 3 pick is <?=$_SESSION['team3_pick']?></p>
+<p>The bet amount is $<?=$bet?></p>
 </div>
 </body>
 
