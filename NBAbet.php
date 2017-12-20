@@ -8,7 +8,7 @@ body {margin: 0;}
   background-color: black;
   background-position: right bottom;
   background-repeat: repeat;
-  padding: 1px;
+  padding: .5px;
 }
 .topnav{
     overflow: hidden;
@@ -60,17 +60,17 @@ body {margin: 0;}
 </style>
 
 <body>
-<center>
 <div id = "css1">
+<center>
 <h3><font face="georgia" size="5" color="white">Kehoe's Bros Betting</font></h3>
     <div class="topnav" id="firstTopNav">
         <a href="pickaSport.php">HOME</a>
-        <a href="NBAdeposit.php">DEPOSIT</a>
+        <a href="deposit.php">DEPOSIT</a>
         <a href="about.php">ABOUT</a>
         <a href="NBAcompareResults.php">RESULTS</a>
     </div>
-</div>
 </center>
+</div>
 </body>
 
 <body>
@@ -78,16 +78,13 @@ body {margin: 0;}
 <?php
 session_start();
 // retrieve the form data by using the element's name attributes value as key 
-
-
 //require('betFunc.php.inc');
-
-$basketball = $_GET['basketball']; 
-$basketball2 = $_GET['basketball2']; 
-$basketball3 = $_GET['basketball3'];
-$_SESSION['basketball'] = $basketball;
-$_SESSION['basketball2'] = $basketball2;
-$_SESSION['basketball3'] = $basketball3;
+$basketball = $_GET['team1_pick']; 
+$basketball2 = $_GET['team2_pick']; 
+$basketball3 = $_GET['team3_pick'];
+$_SESSION['team1_pick'] = $basketball;
+$_SESSION['team2_pick'] = $basketball2;
+$_SESSION['team3_pick'] = $basketball3;
 ?>
 
 <style>
@@ -96,6 +93,7 @@ $_SESSION['basketball3'] = $basketball3;
     margin: auto;
     float: center;
     width: 290px;
+    border: 2px solid;
     font-family:"georgia";
     height: 150px;
     background-color: black;
@@ -115,9 +113,9 @@ $_SESSION['basketball3'] = $basketball3;
 <body>
 <div class = "box1">
 <h2><font face="georgia" size="4" color="black"><center>Selected Team</center></font></h2>
-<p>Team 1:     <?=$_SESSION['basketball']?></p>
-<p>Team 2:     <?=$_SESSION['basketball2']?></p>
-<p>Team 3:     <?=$_SESSION['basketball3']?></p>
+<p>Team 1:     <?=$_SESSION['team1_pick']?></p>
+<p>Team 2:     <?=$_SESSION['team2_pick']?></p>
+<p>Team 3:     <?=$_SESSION['team3_pick']?></p>
 </div>
 </body>
 <br>
@@ -127,7 +125,7 @@ $_SESSION['basketball3'] = $basketball3;
 <body>
 
 
-<form name="thisForm" action="NBAinsertBets.php" method="post" style="width: 410px; padding-bottom: .8cm; padding-top: .05cm; background-color: #000000; background-color: black| transparent; background: rgba(225, 225, 225, .59);">
+<form name="thisForm" action="NBAinsertBets.php" method="post" style="width: 410px; padding-bottom: .8cm; padding-top: .05cm; background-color: #000000; background-color: black| transparent; background: rgba(225, 225, 225, .59); border: 2px solid;">
 
 <h2><font face="georgia" size="3" color="black"><center>Place your bet below</center></h2> 
     
