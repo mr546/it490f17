@@ -15,10 +15,9 @@ body {margin: 0;}
     background-color:black;
     }
 .topnav a{
-    float: left;
-    display: block;
+    float: center;
+    display: inline;
     color: white;
-    text-align: center;
     padding: 5px 10px;
     text-decoration: none;
     font-size: 10px;
@@ -27,7 +26,7 @@ body {margin: 0;}
     background-color: lightblue;
     color: white;
 }
-.topnav a.active{
+/**.topnav a.active{
     background-color: #ee2211;
     color: red;
 }   
@@ -43,22 +42,24 @@ body {margin: 0;}
     padding-left: .5cm;
     padding-top: .05cm;
     padding-bottom: .8cm;
-}
+}**/
     
 </style>
 
 </head>
 
 <body>
+<center>
 <div id = "css1">
 <h3><font face="georgia" size="5" color="white">Kehoe's Bros Betting</font></h3>
     <div class="topnav" id="firstTopNav">
-        <a href="homepage.php">HOME</a>
+        <a href="pickaSport.php">HOME</a>
         <a href="deposit.php">DEPOSIT</a>
         <a href="about.php">ABOUT</a>
         <a href="compareResults.php">RESULTS</a>
     </div>
 </div>
+</center>
 </body>
 </style>
 
@@ -71,7 +72,7 @@ body {margin: 0;}
 <style>
     { margin: 0; padding: 0; }
     html {
-        background: url('https://i.pinimg.com/originals/2c/ba/0c/2cba0cb95b6bfdad2a7699490309d8ff.jpg') no-repeat center center fixed;
+        background: url('http://www.drodd.com/nfl/nfl22.jpg') no-repeat center center fixed;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -86,17 +87,19 @@ body {margin: 0;}
     position: relative;
     margin: 1%;
     float: center;
+    border: 2px solid;
     width: 23%;
     height: 60px;
-    background-color: lightgrey;
+    background-color: black| transparent;
+    background: rgba(225, 225, 225, .5);
 }
 
 </style>
 <br>
 <body>
-<center>
+<!--<center>-->
 
-<center>
+<!--<center>
 <br>
 <form action="team.php" method="get">
     <input list="browsers" name="browser" placeholder="Select team..." style="width: 500px; margin: 0 auto; padding: 15px 32px; text-align: center; text-decoration: none; font-size: 20px; margin: 4px 2px; cursor: pointer;"/>
@@ -138,10 +141,10 @@ body {margin: 0;}
     color: black; font-family: impact; letter-spacing: 1px; padding: 15px 32px;btext-align: center; text-decoration: none;
     display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer;"/>
 </center>
-</form>
+</form>-->
 
 <div class="div1">
-<center>
+<!--<center>-->
 <form action="bet.php" method="get">
   <font face="impact" color="black" size="5"><b>Quarterback</b></font>
   <br>
@@ -181,12 +184,12 @@ body {margin: 0;}
 <!--32--><option value="Tom Brady">Tom Brady</option>
 </select>
 <!--<input value="Select" type="bu/>-->
-</center>
+<!--</center>-->
 </div>
 
 
 <div class="div2">
-<center>
+<!--<center>-->
 <form action="bet.php" method="get">
   <font face="impact" color="black" size="5"><b>Running back</b></font>
   <br>
@@ -315,11 +318,11 @@ body {margin: 0;}
 <option value="DJ Foster">DJ Foster</option>
 </select>
 <!--<input value="Select" type="submit"/>-->
-</center>
+<!--</center>-->
 </div>
 
 <div class="div3">
-<center>
+<!-- <center> -->
 <form action="bet.php" method="get">
   <font face="impact" color="black" size="5"><b>Wide receiver</b></font>
   <br>
@@ -432,16 +435,15 @@ body {margin: 0;}
 </select>
 <br>
 <br>
-<input value="Select" type="submit"/>
-</center>
+<!--</center>-->
 </div>
 <!--<input value="SELECT" type ="button" onclick="sndReq()"/>-->
 <!--<button class ="btn btn-lg btn-primary btn-block" type="button" onclick="sndReq()">Submit</button>-->
-</center>
-</center>
-<br>
-<br>
+<!--</center>
+</center>-->
 <center>
+<input value="Select" type="submit"/>
+
 </center>
 <br>
 </body>
