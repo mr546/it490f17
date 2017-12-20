@@ -1,3 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Kehoe's Bros Betting</title> 
+<style>
+body {margin: 0;}
+#css1{
+  background-color: black;
+  background-position: right bottom;
+  background-repeat: repeat;
+  padding: .5px;
+}
+.topnav{
+    overflow: hidden;
+    background-color:black;
+    }
+.topnav a{
+    float: center;
+    display: inline;
+    color: white;
+    padding: 5px 10px;
+    text-decoration: none;
+    font-size: 10px;
+    }
+.topnav a:hover{
+    background-color: lightblue;
+    color: white;
+}
+/**.topnav a.active{
+    background-color: #ee2211;
+    color: red;
+}   
+.box1{
+    position: relative;
+    margin: auto;
+    float: center;
+    width: 400px;
+    font-family:"georgia";
+    height: 100px;
+    background-color: pink;
+    text-align: left;
+    padding-left: .5cm;
+    padding-top: .05cm;
+    padding-bottom: .8cm;
+}**/
+    
+</style>
+
+</head>
+
+<body>
+<center>
+<div id = "css1">
+<h3><font face="georgia" size="5" color="white">Kehoe's Bros Betting</font></h3>
+    <div class="topnav" id="firstTopNav">
+        <a href="pickaSport.php">HOME</a>
+        <a href="deposit.php">DEPOSIT</a>
+        <a href="about.php">ABOUT</a>
+        <a href="compareResults.php">RESULTS</a>
+    </div>
+</div>
+</center>
+</body>
+</style>
+
+
+</head>
+<body>
+<center>
+<style>
+    { margin: 0; padding: 0; }
+    html {
+        background: url('http://www.drodd.com/nfl/nfl22.jpg') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+</style>
+
+
+<!--#!/usr/bin/php-->
 <?php
 include "database1.php";
 $conn    = Connect();
@@ -46,13 +128,20 @@ $getUserBalance = "SELECT balance AS var FROM users WHERE screenname = '$userRes
 $userBalanceQuery = mysqli_query($db2, $getUserBalance);
 $userBalanceResult = $userBalanceQuery->fetch_object()->var;
 //echo $userBalanceResult;
+//gets email address
+$getEmail = "SELECT email AS var FROM users where screenname = '$userResult'";
+$emailQuery = mysqli_query($db2, $getEmail);
+$emailResult = $emailQuery->fetch_object()->var;
+
+
 //checks if hit on qb
 if($qbResult == $userQbResult)
 {
 $amount = (.33 * $betResult) + $userBalanceResult;
 $qbBetWon = "update users set balance = '$amount' where screenname = '$userResult'";
 $success = $db2->query($qbBetWon);
-echo "your choice " . $userQbResult . " won!<br><br>";
+echo "<p style='color:black; background-color:white; height:50px; width: 350px; padding-top: 50px; padding-bottom: 50px; padding-left: 30px; padding-right: 30px; border: 2px solid;'>Your choice ". $userQbResult . " won! Email sent: Your QB won </p><br>";
+ mail($emailResult, "your quarterback choice was right", " you have earned '$betResult', so your total is now '$userBalanceResult'");
 }
 //check if miss on qb
 if($qbResult != $userQbResult)
@@ -63,10 +152,13 @@ if($qbResult != $userQbResult)
         $amount = $userBalanceResult - (.33 * $betResult);
         $qbBetLost = "update users set balance = '$amount' where screenname = '$userResult'";
         $success = $db2->query($qbBetLost);
-        echo "\n" . "your choice " . $userQbResult . " did not win<br><br>";
+        
+        echo "<p style='color:black; background-color:white; height:50px; width: 350px; padding-top: 50px; padding-bottom: 50px; padding-left: 30px; padding-right: 30px; border: 2px solid;'>Your choice ".$userQbResult." did not win. Email sent: Your QB choice lost </p><br>";         
+        mail($emailResult, "your quarterback choice was not right", "you have not earned any more money");
+        
 //code to track a win, put it in a database that just has an INT for a number to add/subtract to it.
         $getCurrentYTD = "SELECT yearly_total as var FROM admin";
-        $currentYTDQuery = mysqli_query($db2,$getCurrenYTD);
+        $currentYTDQuery = mysqli_query($db2,$getCurrentYTD);
         $currentYTDResult = $currentYTDQuery->fetch_object()->var;
         
         
@@ -75,7 +167,7 @@ if($qbResult != $userQbResult)
         $updateProfitWT = "update admin set weekly_total = '$profitGain' where screenname = 'admin'";
         $success1 = $db2->query($updateProfitYTD);
         $success2 = $db2->query($updateProfitWT);
-    }
+}
 //checks if hit on RB
 if($rbResult == $userRbResult)
     {
@@ -85,7 +177,11 @@ if($rbResult == $userRbResult)
         $amount = (.33 * $betResult) + $userBalanceResult;
         $rbBetWon = "update users set balance = '$amount' where screenname = '$userResult'";
         $success = $db2->query($rbBetWon);
-        echo ".\n" . "your choice " . $userRbResult . " won!<br><br>";
+        
+//         echo ".\n" . "your choice " . $userRbResult . " won!<br><br>";
+        echo "<p style='color:black; background-color:blue; height:50px; width: 350px; padding-top: 50px; padding-bottom: 50px; padding-left: 30px; padding-right: 30px;border: 2px solid;'>Your choice ".$userRbResult." won </p><br>";
+        mail($emailResult, "your runningback was right", " you have earned '$betResult', so your total is now '$userBalanceResult'");
+//         echo "<p style='color:black; background-color:red; height:50px; width: 350px; padding-top: 50px; padding-bottom: 50px; padding-left: 30px; padding-right: 30px;'>email sent for winning rb</p><br>";
     }
 //check if miss on RB
 if($rbResult != $userRbResult)
@@ -97,7 +193,10 @@ if($rbResult != $userRbResult)
         $rbBetLost = "update users set balance = '$amount' where screenname = '$userResult'";
         $success = $db2->query($rbBetLost);
         
-        echo "\n" . "your choice " . $userRbResult . " did not win<br><br>";
+//         echo "\n" . "your choice " . $userRbResult . " did not win<br><br>";
+        echo "<p style='color:black; background-color:blue; height:50px; width: 350px; padding-top: 50px; padding-bottom: 50px; padding-left: 30px; padding-right: 30px;border: 2px solid;'>Your choice ".$userRbResult." did not win. Email sent: rb-losing</p><br>";
+        mail($emailResult, "your running back choice  was not right", "you have not earned any more money");
+//         echo "<p style='color:black; background-color:red; height:50px; width: 350px; padding-top: 50px; padding-bottom: 50px; padding-left: 80p; padding-right: 30px;'>Email sent: rb-losing</p><br>";
     }
 //checks if hit on WR
 if($wrResult == $userWrResult)
@@ -108,9 +207,12 @@ if($wrResult == $userWrResult)
         $amount = (.33 * $betResult) + $userBalanceResult;
         $wrBetWon = "update users set balance = '$amount' where screenname = '$userResult'";
         $success = $db2->query($wrBetWon);
-        echo "\n" . "your choice " . $userWrResult . " won<br><br>";
+//      echo "\n" . "your choice " . $userWrResult . " won<br><br>";
+        echo "<p style='color:black; background-color:red; height:50px; width: 350px; padding-top: 50px; padding-bottom: 50px; padding-left: 30px; padding-right: 30px;border: 2px solid;'>Your choice ".$userWrResult." won! Email sent: wr-winning</p>";
+        mail($emailResult, "Your reciever choice was correct", " you have earned '$betResult', so your total is now '$userBalanceResult'");
+//      echo "<p style='color:black; background-color:red; height:50px; width: 350px; padding-top: 50px; padding-bottom: 50px; padding-left: 80p; padding-right: 30px;'>Email sent: wr-winning</p><br>";
     }
-    //check if miss on WR
+//check if miss on WR
 if($wrResult != $userWrResult)
     {
         $getUserBalance = "SELECT balance AS var FROM users WHERE screenname = '$userResult'";
@@ -120,10 +222,26 @@ if($wrResult != $userWrResult)
         $wrBetLost = "update users set balance = '$amount' where screenname = '$userResult'";
         $success = $db2->query($wrBetLost);
         
-        echo "\n" . "your choice " . $userWrResult . " did not win<br><br>";
+//         echo /*"\n" . */"<div style=\"background:$hexcolor; height:5px; width:25px;\">"your choice " . $userWrResult . " did not win<br><br>"";
+        echo "<p style='color:black; background-color:red; height:50px; width: 350px; padding-top: 50px; padding-bottom: 50px; padding-left: 30px; padding-right: 30px; border: 2px solid;'>Your choice ".$userWrResult." did not win. Email sent: wr-losing</p><br>";
+        mail($emailResult, "Your receiver choice  was not right", "you have not earned any more money");
+//         echo "<p style='color:black; background-color:red; height:50px; width: 350px; padding: 1px;'>Email sent: wr-losing</p><br><br>";
     }
 $getUserBalance = "SELECT balance AS var FROM users WHERE screenname = '$userResult'";
 $userBalanceQuery = mysqli_query($db2, $getUserBalance);
 $userBalanceResult = $userBalanceQuery->fetch_object()->var;
-echo "\n" . $userResult . " your new balance is " . $userBalanceResult; 
+echo "<p style='color:black; background-color:red; height:50px; width: 350px; padding-top: 50px; padding-bottom: 50px; padding-left: 30px; padding-right: 30px; border: 2px solid;'> Your choice". $userResult . " your new balance is " . $userBalanceResult ." Cool! </p>"; 
 ?>
+
+<!--<br>
+<br>
+<body>
+<div class = "box1">
+<p>The QB is <?=$_SESSION['qb']?></p>
+<p>The RB is <?=$_SESSION['rb']?></p>
+<p>The WR is <?=$_SESSION['wr']?></p>
+<p>Your new balance is <?=$userBalanceResult?></p>
+</div>
+</body>-->
+
+</html>
