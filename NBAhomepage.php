@@ -55,7 +55,7 @@ body {margin: 0;}
 <h3><font face="georgia" size="5" color="white">Kehoe's Bros Betting</font></h3>
     <div class="topnav" id="firstTopNav">
         <a href="pickaSport.php">HOME</a>
-        <a href="NBAdeposit.php">DEPOSIT</a>
+        <a href="deposit.php">DEPOSIT</a>
         <a href="about.php">ABOUT</a>
         <a href="NBAcompareResults.php">RESULTS</a>
     </div>
@@ -90,6 +90,7 @@ body {margin: 0;}
     float: center;
     width: 23%;
     height: 250px;
+    border: 2px solid;
     background-color: black| transparent;
     background: rgba(225, 225, 225, .5);
 }
@@ -108,7 +109,7 @@ body {margin: 0;}
 <form action="NBAbet.php" method="get">
   <font face="impact" color="black" size="5"><b>Select Teams:</b></font>
   <br><br>
-  <select id = "basketball" name="basketball" style="width: 200px; border: 0px solid; padding: 5px; color: #000; background-color: #f1f1f1;  font-family: calibri; text-transform: uppercase; font-size: 10px; letter-spacing: 1px;">
+  <select id = "team1_pick" name="team1_pick" style="width: 200px; border: 0px solid; padding: 5px; color: #000; background-color: #f1f1f1;  font-family: calibri; text-transform: uppercase; font-size: 10px; letter-spacing: 1px;">
 <option value="">TEAMS</option>
 <!--1--><option value="Atlanta Hawks">Atlanta Hawks</option>
 <!--2--><option value="Boston Celtics">Boston Celtics</option>
@@ -144,7 +145,7 @@ body {margin: 0;}
 </select>
 <br>
 <br>
-<select id = "basketball2" name="basketball2" style="width: 200px; border: 0px solid; padding: 5px; color: #000; background-color: #f1f1f1;  font-family: calibri; text-transform: uppercase; font-size: 10px; letter-spacing: 1px;">
+<select id = "team2_pick" name="team2_pick" style="width: 200px; border: 0px solid; padding: 5px; color: #000; background-color: #f1f1f1;  font-family: calibri; text-transform: uppercase; font-size: 10px; letter-spacing: 1px;">
 <option value="">TEAMS</option>
 <!--1--><option value="Atlanta Hawks">Atlanta Hawks</option>
 <!--2--><option value="Boston Celtics">Boston Celtics</option>
@@ -180,7 +181,7 @@ body {margin: 0;}
 </select>
 <br>
 <br>
-<select id = "basketball3" name="basketball3" style="width: 200px; border: 0px solid; padding: 5px; color: #000; background-color: #f1f1f1;  font-family: calibri; text-transform: uppercase; font-size: 10px; letter-spacing: 1px;">
+<select id = "team3_pick" name="team3_pick" style="width: 200px; border: 0px solid; padding: 5px; color: #000; background-color: #f1f1f1;  font-family: calibri; text-transform: uppercase; font-size: 10px; letter-spacing: 1px;">
 <option value="">TEAMS</option>
 <!--1--><option value="Atlanta Hawks">Atlanta Hawks</option>
 <!--2--><option value="Boston Celtics">Boston Celtics</option>
