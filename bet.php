@@ -15,24 +15,24 @@ body {margin: 0;}
     background-color:black;
     }
 .topnav a{
-    float: left;
-    display: block;
+    float: center;
+    display: inline;
     color: white;
-    text-align: center;
+/*    text-align: center;*/
     padding: 5px 10px;
     text-decoration: none;
     font-size: 10px;
     }
 .topnav a:hover{
     background-color: lightblue;
-    color: black;
+    color: white;
 }
-.topnav a.active{
+/**.topnav a.active{
     background-color: #ee2211;
     color: red;
-}   
-.box1{
-    position: relative;
+}  **/
+/* .box1{ */
+    /*position: relative;
     margin: auto;
     float: center;
     width: 400px;
@@ -44,7 +44,7 @@ body {margin: 0;}
     padding-left: .5cm;
     padding-top: .05cm;
     padding-bottom: .8cm;
-}
+}*/
 
     
 </style>
@@ -63,7 +63,7 @@ body {margin: 0;}
 
 <body>
 <div id = "css1">
-<!--<h3><font face="georgia" size="5" color="white">Kehoe's Bros Betting</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font face="gerogia" size="5" color="white">Place Bets</font> </h3>-->
+<center>
 <h3><font face="georgia" size="5" color="white">Kehoe's Bros Betting</font></h3>
 <!--<p><font face="georgia" size="2" color="white">Place Bets</font></p>-->
     <div class="topnav" id="firstTopNav">
@@ -72,6 +72,7 @@ body {margin: 0;}
         <a href="about.php">ABOUT</a>
         <a href="compareResults.php">RESULTS</a>
     </div>
+</center>
 </div>
 </body>
 
@@ -93,40 +94,42 @@ $_SESSION['wr'] = $wr;
 ?>
 
 <style>
-/**.box1{
+/*.box1{
     position: relative;
     /**margin: auto;**/
-    float: center;
+    /*float: center;
     width: 400px;
     font-family:"georgia";
     height: 100px;
     background-color: black;
     text-align: left;
-    padding-left: .5cm;
+    padding-left: .5cm;*/
     /**padding-top: .05cm;
-    padding-bottom: .8cm;**/
+    padding-bottom: .8cm;*/
 .box1{
     position: relative;
     margin: auto;
     float: center;
-    width: 600px;
+    width: 300px;
     font-family:"georgia";
-    height: 100px;
+    height: 150px;
     background-color: black;
-    color: white;
+    color: black;
+    border: 2px solid;
     text-align: left;
     padding-left: .5cm;
     padding-top: .05cm;
     padding-bottom: .8cm;
+    background-color: black| transparent;
+    background: rgba(225, 225, 225, .59);
 }
-
 </style>
 <center>
 <br>
 <br>
 <body>
 <div class = "box1">
-<h2><font face="georgia" size="4" color="white"><center>Selected Players</center></font></h2>
+<h2><font face="georgia" size="4" color="black"><center>Selected Players</center></font></h2>
 <p> Quarterback:     <?=$_SESSION['qb']?></p>
 <p> Runningback:     <?=$_SESSION['rb']?></p>
 <p> Wide Receiver:   <?=$_SESSION['wr']?></p>
@@ -139,9 +142,9 @@ $_SESSION['wr'] = $wr;
 <body>
 
 
-<form name="thisForm" action="insertBets.php" method="post" style="width: 410px; padding-bottom: .8cm; padding-top: .05cm; background-color: #000000;">
+<form name="thisForm" action="insertBets.php" method="post" style="width: 410px; padding-bottom: .8cm; padding-top: .05cm; background-color: #000000; background-color: black| transparent; background: rgba(225, 225, 225, .59);border: 2px solid;">
 
-<h2><font face="georgia" size="3" color="white"><center>Place your bet below</center></h2> 
+<h2><font face="georgia" size="3" color="black"><center>Place your bet below</center></h2> 
     
     
     <label><font size="2"><b>Bet Amount: </b></font></label>
