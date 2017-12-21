@@ -35,7 +35,7 @@ body {margin: 0;}
     position: relative;
     margin: auto;
     float: center;
-    width: 400px;
+    width: 310px;
     font-family:"georgia";
     height: 120px;
     background-color: black;
@@ -46,7 +46,7 @@ body {margin: 0;}
     padding-top: .05cm;
     padding-bottom: .8cm;
     background-color: black| transparent;
-    background: rgba(225, 225, 225, .59);
+    background: rgba(225, 225, 225, .70);
 }
 
     
@@ -98,10 +98,6 @@ $success1 = $conn->query($drop);
 $query   = "INSERT into user_bballbet (screenname,bet_amount,team1_pick,team2_pick,team3_pick) VALUES('" . "dc376" . "','" . $bet . "','" . $_SESSION["team1_pick"] . "','" . $_SESSION["team2_pick"] . "','" . $_SESSION["team3_pick"] . "')";
 $success = $conn->query($query);
  
-//echo "<br><br>The QB is ". $_SESSION['qb'];
-//echo "<br><br>The RB is ". $_SESSION['rb'];
-//echo "<br><br>The WR is ". $_SESSION['wr'];
-//echo "<br><br>The bet amount is ". $bet;
  
 $conn->close();
  
