@@ -38,7 +38,7 @@ body {margin: 0;}
     width: 300px;
     border: 2px solid;
     font-family:"georgia";
-    height: 120px;
+    height: 150px;
     background-color: black;
     color: black;
     text-align: left;
