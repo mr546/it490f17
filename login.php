@@ -21,10 +21,8 @@ switch ($request["type"])
 		$req=array();
 		$req['type']="login";
 		$req['username']=$request["uname"];
-		$req['password']=$request["pword"];
+		$req['password']=md5($request["pword"]);
 		$response = $client->send_request($req);
-		
-	
 	}
 	
 }
