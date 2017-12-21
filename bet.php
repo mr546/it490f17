@@ -49,7 +49,7 @@ body {margin: 0;}
 <h3><font face="georgia" size="5" color="white">Kehoe's Bros Betting</font></h3>
 <!--<p><font face="georgia" size="2" color="white">Place Bets</font></p>-->
     <div class="topnav" id="firstTopNav">
-        <a href="homepage.php">HOME</a>
+        <a href="pickaSport.php">HOME</a>
         <a href="deposit.php">DEPOSIT</a>
         <a href="about.php">ABOUT</a>
         <a href="compareResults.php">RESULTS</a>
