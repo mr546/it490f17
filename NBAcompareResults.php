@@ -232,7 +232,7 @@ if(count($winners) == 3){
 	$success = $db2->query($firstPickLost);
 }
 //print_r($winners);
-
+echo "<p style='color:black; background-color:red; height:30px; width: 350px; padding-top: 30px; padding-bottom: 50px; padding-left: 30px; padding-right: 30px; border: 2px solid;background-color: black| transparent; background: rgba(225, 225, 225, .70);'>". $userResult . " your new balance is " . $userBalanceResult ." Cool! </p>";
     
 return $rows;
 $db2->close();
