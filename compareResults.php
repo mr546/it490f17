@@ -140,8 +140,8 @@ if($qbResult == $userQbResult)
 $amount = (.33 * $betResult) + $userBalanceResult;
 $qbBetWon = "update users set balance = '$amount' where screenname = '$userResult'";
 $success = $db2->query($qbBetWon);
-echo "<p style='color:black; background-color:white; height:50px; width: 350px; padding-top: 50px; padding-bottom: 50px; padding-left: 30px; padding-right: 30px; border: 2px solid;'>Your choice ". $userQbResult . " won! Email sent: Your QB won </p><br>";
- mail($emailResult, "your quarterback choice was right", " you have earned '$betResult', so your total is now '$userBalanceResult'");
+echo "<p style='color:black; background-color:white; height:30px; width: 350px; padding-top: 30px; padding-bottom: 50px; padding-left: 30px; padding-right: 30px; border: 2px solid; background-color: black| transparent; background: rgba(225, 225, 225, .70);'>Your choice ". $userQbResult . " won! Email sent: Your QB won </p><br>";
+ mail($emailResult, "your quarterback choice was right", " you have earned " (.33 * $betResult), "so your total is now ",$userBalanceResult);
 }
 //check if miss on qb
 if($qbResult != $userQbResult)
@@ -153,7 +153,7 @@ if($qbResult != $userQbResult)
         $qbBetLost = "update users set balance = '$amount' where screenname = '$userResult'";
         $success = $db2->query($qbBetLost);
         
-        echo "<p style='color:black; background-color:white; height:50px; width: 350px; padding-top: 50px; padding-bottom: 50px; padding-left: 30px; padding-right: 30px; border: 2px solid;'>Your choice ".$userQbResult." did not win. Email sent: Your QB choice lost </p><br>";         
+        echo "<p style='color:black; background-color:white; height:30px; width: 350px; padding-top: 30px; padding-bottom: 50px; padding-left: 30px; padding-right: 30px; border: 2px solid;background-color: black| transparent; background: rgba(225, 225, 225, .70);'>Your choice ".$userQbResult." did not win. Email sent: Your QB choice lost </p><br>";         
         mail($emailResult, "your quarterback choice was not right", "you have not earned any more money");
         
 //code to track a win, put it in a database that just has an INT for a number to add/subtract to it.
@@ -179,8 +179,8 @@ if($rbResult == $userRbResult)
         $success = $db2->query($rbBetWon);
         
 //         echo ".\n" . "your choice " . $userRbResult . " won!<br><br>";
-        echo "<p style='color:black; background-color:blue; height:50px; width: 350px; padding-top: 50px; padding-bottom: 50px; padding-left: 30px; padding-right: 30px;border: 2px solid;'>Your choice ".$userRbResult." won </p><br>";
-        mail($emailResult, "your runningback was right", " you have earned '$betResult', so your total is now '$userBalanceResult'");
+        echo "<p style='color:black; background-color:blue; height:30px; width: 350px; padding-top: 30px; padding-bottom: 50px; padding-left: 30px; padding-right: 30px;border: 2px solid;background-color: black| transparent; background: rgba(225, 225, 225, .70);'>Your choice ".$userRbResult." won </p><br>";
+        mail($emailResult, "your runningback was right", " you have earned ",(.33 * $betResult), "so your total is now " , $userBalanceResult);
 //         echo "<p style='color:black; background-color:red; height:50px; width: 350px; padding-top: 50px; padding-bottom: 50px; padding-left: 30px; padding-right: 30px;'>email sent for winning rb</p><br>";
     }
 //check if miss on RB
@@ -194,7 +194,7 @@ if($rbResult != $userRbResult)
         $success = $db2->query($rbBetLost);
         
 //         echo "\n" . "your choice " . $userRbResult . " did not win<br><br>";
-        echo "<p style='color:black; background-color:blue; height:50px; width: 350px; padding-top: 50px; padding-bottom: 50px; padding-left: 30px; padding-right: 30px;border: 2px solid;'>Your choice ".$userRbResult." did not win. Email sent: rb-losing</p><br>";
+        echo "<p style='color:black; background-color:blue; height:30px; width: 350px; padding-top: 30px; padding-bottom: 50px; padding-left: 30px; padding-right: 30px;border: 2px solid; background-color: black| transparent; background: rgba(225, 225, 225, .70);'>Your choice ".$userRbResult." did not win. Email sent: Your Runningback choice did not win</p><br>";
         mail($emailResult, "your running back choice  was not right", "you have not earned any more money");
 //         echo "<p style='color:black; background-color:red; height:50px; width: 350px; padding-top: 50px; padding-bottom: 50px; padding-left: 80p; padding-right: 30px;'>Email sent: rb-losing</p><br>";
     }
@@ -208,8 +208,8 @@ if($wrResult == $userWrResult)
         $wrBetWon = "update users set balance = '$amount' where screenname = '$userResult'";
         $success = $db2->query($wrBetWon);
 //      echo "\n" . "your choice " . $userWrResult . " won<br><br>";
-        echo "<p style='color:black; background-color:red; height:50px; width: 350px; padding-top: 50px; padding-bottom: 50px; padding-left: 30px; padding-right: 30px;border: 2px solid;'>Your choice ".$userWrResult." won! Email sent: wr-winning</p>";
-        mail($emailResult, "Your reciever choice was correct", " you have earned '$betResult', so your total is now '$userBalanceResult'");
+        echo "<p style='color:black; background-color:red; height:30px; width: 350px; padding-top: 30px; padding-bottom: 50px; padding-left: 30px; padding-right: 30px;border: 2px solid;background-color: black| transparent; background: rgba(225, 225, 225, .70);'>Your choice ".$userWrResult." won! Email sent: Your Wide Receiver choice won!</p>";
+        mail($emailResult, "Your reciever choice was correct you have earned " , (.33 * $betResult), "so your total is now: " , $userBalanceResult);
 //      echo "<p style='color:black; background-color:red; height:50px; width: 350px; padding-top: 50px; padding-bottom: 50px; padding-left: 80p; padding-right: 30px;'>Email sent: wr-winning</p><br>";
     }
 //check if miss on WR
@@ -223,14 +223,14 @@ if($wrResult != $userWrResult)
         $success = $db2->query($wrBetLost);
         
 //         echo /*"\n" . */"<div style=\"background:$hexcolor; height:5px; width:25px;\">"your choice " . $userWrResult . " did not win<br><br>"";
-        echo "<p style='color:black; background-color:red; height:50px; width: 350px; padding-top: 50px; padding-bottom: 50px; padding-left: 30px; padding-right: 30px; border: 2px solid;'>Your choice ".$userWrResult." did not win. Email sent: wr-losing</p><br>";
+        echo "<p style='color:black; background-color:red; height:30px; width: 350px; padding-top: 30px; padding-bottom: 50px; padding-left: 30px; padding-right: 30px; border: 2px solid;background-color: black| transparent; background: rgba(225, 225, 225, .70);'>Your choice ".$userWrResult." did not win. Email sent: wr-losing</p><br>";
         mail($emailResult, "Your receiver choice  was not right", "you have not earned any more money");
 //         echo "<p style='color:black; background-color:red; height:50px; width: 350px; padding: 1px;'>Email sent: wr-losing</p><br><br>";
     }
 $getUserBalance = "SELECT balance AS var FROM users WHERE screenname = '$userResult'";
 $userBalanceQuery = mysqli_query($db2, $getUserBalance);
 $userBalanceResult = $userBalanceQuery->fetch_object()->var;
-echo "<p style='color:black; background-color:red; height:50px; width: 350px; padding-top: 50px; padding-bottom: 50px; padding-left: 30px; padding-right: 30px; border: 2px solid;'> Your choice". $userResult . " your new balance is " . $userBalanceResult ." Cool! </p>"; 
+echo "<p style='color:black; background-color:red; height:30px; width: 350px; padding-top: 30px; padding-bottom: 50px; padding-left: 30px; padding-right: 30px; border: 2px solid;background-color: black| transparent; background: rgba(225, 225, 225, .70);'>". $userResult . " your new balance is " . $userBalanceResult ." Cool! </p>"; 
 ?>
 
 <!--<br>
