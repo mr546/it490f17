@@ -46,7 +46,7 @@ body {margin: 0;}
 <style>
     { margin: 0; padding: 0; }
     html {
-        background: url("https://usatftw.files.wordpress.com/2017/05/nba-logo.jpg?w=1000")no-repeat center center fixed;
+        background: url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/VYJZA0Avg/rack-focus-of-stadium-lights-in-front-of-a-dark-blue-sky-light-stadium-at-night-baseball-and-hockey-there-is-a-rain-or-snow-military-security-lighting-towers-patrol-in-prison_h9xhm5hjle_thumbnail-full01.png")no-repeat center center fixed;
         /*background: white;*/
         -webkit-background-size: cover;
         -moz-background-size: cover;
@@ -61,14 +61,12 @@ body {margin: 0;}
     height: 70%;
     padding: 10px;
     border: 2px solid black;
-    background-color: white; /*|transparent;
-    background: rgba (255, 255, 255, .5);*/
     }
 </style>
 
 <body>
 <center>
-<div class ="divBack">
+<div class ="divBack" style="background-color: black|transparent; background:rgba(255,255,255,.65);">
     <h4><center>About Kehoe's Bros Betting</center></h4>
     <p align="left">The website will track NFL quarterback, running backs, and wide receiver stats. Specifically their pass yards, rushing yards, and receiving yards. Users will be able to log into the website and have a balance that they can add money to bet with. The user will select a quarterback, running back, and wide receiever whom they believe will have the most passing yards, running yards, and receiving yards for the week. Once they select a player, they will place their bet. At the end of the week, the user will click the Weekly Results button on their homepage which will show them if their picks have won them money or not.
     </p>
