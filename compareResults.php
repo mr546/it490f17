@@ -141,7 +141,7 @@ $amount = (.33 * $betResult) + $userBalanceResult;
 $qbBetWon = "update users set balance = '$amount' where screenname = '$userResult'";
 $success = $db2->query($qbBetWon);
 echo "<p style='color:black; background-color:white; height:30px; width: 350px; padding-top: 30px; padding-bottom: 50px; padding-left: 30px; padding-right: 30px; border: 2px solid; background-color: black| transparent; background: rgba(225, 225, 225, .70);'>Your choice ". $userQbResult . " won! Email sent: Your QB won </p><br>";
- mail($emailResult, "your quarterback choice was right", " you have earned " (.33 * $betResult), "so your total is now ",$userBalanceResult);
+ mail($emailResult, "your quarterback choice was right", " you have earned " ,(.33 * $betResult), "so your total is now ",$userBalanceResult);
 }
 //check if miss on qb
 if($qbResult != $userQbResult)
