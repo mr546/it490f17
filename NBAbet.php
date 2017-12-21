@@ -122,3 +122,5 @@ $_SESSION['team3_pick'] = $basketball3;
 
 </body>
 </html>
+
+	
