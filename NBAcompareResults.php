@@ -184,7 +184,8 @@ if(count($winners) == 0){
         $userBalanceQuery = mysqli_query($db2, $getUserBalance);
         $userBalanceResult = $userBalanceQuery->fetch_object()->var;
         
-	echo "<p style='color:black; background-color:white; height:50px; width: 350px; padding-top: 50px; padding-bottom: 50px; padding-left: 30px; padding-right: 30px;'>Sorry, none of your team picks won this week, your balance has been adjusted.</p><br>";
+	echo "<p style='color:black; background-color:white; height:50px; width: 350px; padding-top: 50px; padding-bottom: 50px; padding-left: 30px; padding-right: 30px;border: 2px solid; background-color: black| transparent;
+    background: rgba(225, 225, 225, .65);'>Sorry, none of your team picks won this week, your balance has been adjusted.</p><br>";
 	mail($emailResult, "your Team was not right", "you have not earned any more money");
 	
 	$amount = $userBalanceResult - ($betResult);
@@ -196,7 +197,8 @@ if(count($winners) == 1){
         $userBalanceQuery = mysqli_query($db2, $getUserBalance);
         $userBalanceResult = $userBalanceQuery->fetch_object()->var;
         
-	echo "<p style='color:black; background-color:white; height:50px; width: 350px; padding-top: 50px; padding-bottom: 50px; padding-left: 30px; padding-right: 30px;'>One of your picks won this week, your balance has been adjusted.</p><br>";
+	echo "<p style='color:black; background-color:white; height:50px; width: 350px; padding-top: 50px; padding-bottom: 50px; padding-left: 30px; padding-right: 30px;border: 2px solid; background-color: black| transparent;
+    background: rgba(225, 225, 225, .65);'>One of your picks won this week, your balance has been adjusted.</p><br>";
 	mail($emailResult, "One of your picks is correct, you have won: " , "$".(.33*$betResult)) ;
 	
 	$amount = $userBalanceResult + (.33 * $betResult);
@@ -208,7 +210,8 @@ if(count($winners) == 2){
         $userBalanceQuery = mysqli_query($db2, $getUserBalance);
         $userBalanceResult = $userBalanceQuery->fetch_object()->var;
         
-	echo "<p style='color:black; background-color:white; height:50px; width: 350px; padding-top: 50px; padding-bottom: 50px; padding-left: 30px; padding-right: 30px;'>Two of your picks won this week, your balance has been adjusted.</p><br>";
+	echo "<p style='color:black; background-color:white; height:50px; width: 350px; padding-top: 50px; padding-bottom: 50px; padding-left: 30px; padding-right: 30px;border: 2px solid; background-color: black| transparent;
+    background: rgba(225, 225, 225, .65);'>Two of your picks won this week, your balance has been adjusted.</p><br>";
 	mail($emailResult, "Two of your picks are correct, you have won: " , "$".(.66*$betResult));
 	
 	$amount = $userBalanceResult + (.66 * $betResult);
@@ -220,7 +223,8 @@ if(count($winners) == 3){
         $userBalanceQuery = mysqli_query($db2, $getUserBalance);
         $userBalanceResult = $userBalanceQuery->fetch_object()->var;
         
-	echo "<p style='color:black; background-color:white; height:50px; width: 350px; padding-top: 50px; padding-bottom: 50px; padding-left: 30px; padding-right: 30px;'>All of your picks won this week, your balance has been adjusted.</p><br>";
+	echo "<p style='color:black; background-color:white; height:50px; width: 350px; padding-top: 50px; padding-bottom: 50px; padding-left: 30px; padding-right: 30px;border: 2px solid; background-color: black| transparent;
+    background: rgba(225, 225, 225, .65);'>All of your picks won this week, your balance has been adjusted.</p><br>";
 	mail($emailResult, "All three of your picks were correct, you have won: ",  "$".$betResult);
 	
 	$amount = $userBalanceResult + ($betResult);
