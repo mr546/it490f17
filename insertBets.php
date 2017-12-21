@@ -15,10 +15,10 @@ body {margin: 0;}
     background-color:black;
     }
 .topnav a{
-    float: left;
-    display: block;
+    float: center;
+    display: inline;
     color: white;
-    text-align: center;
+/*    text-align: center;*/
     padding: 5px 10px;
     text-decoration: none;
     font-size: 10px;
@@ -35,21 +35,22 @@ body {margin: 0;}
     position: relative;
     margin: auto;
     float: center;
-    width: 400px;
+    width: 300px;
+    border: 2px solid;
     font-family:"georgia";
     height: 120px;
     background-color: black;
-    color: white;
+    color: black;
     text-align: left;
     padding-left: .5cm;
     padding-top: .05cm;
     padding-bottom: .8cm;
-}
-
-    
+    background-color: black| transparent;
+    background: rgba(225, 225, 225, .65);
+}    
 </style>
-
 </head>
+
 <style>
     { margin: 0; padding: 0; }
     html {
@@ -63,13 +64,15 @@ body {margin: 0;}
 
 <body>
 <div id = "css1">
-<h3><font face="georgia" size="5" color="white">Players Selected</font></h3>
+<center>
+<h3><font face="georgia" size="5" color="white">Kehoe's Bros Betting</font></h3>
     <div class="topnav" id="firstTopNav">
-        <a href="homepage.php">HOME</a>
+        <a href="pickaSport.php">HOME</a>
         <a href="deposit.php">DEPOSIT</a>
         <a href="about.php">ABOUT</a>
         <a href="compareResults.php">RESULTS</a>
     </div>
+</center>
 </div>
 </body>
 
@@ -82,12 +85,15 @@ $_SESSION['wr'];
 ?>
 
 <?php
+
 $qb = $_GET['qb'];
 $rb = $_GET['rb'];
 $wr = $_GET['wr'];
 require 'database1.php';
 $conn    = Connect();
 $bet    = $_POST['bet_amount'];
+$drop = "TRUNCATE TABLE user_bets";
+$success1 = $conn->query($drop);
 $query   = "INSERT into user_bets (screenname,bet_amount,qb_pick,rb_pick,wr_pick) VALUES('" . "dc376" . "','" . $bet . "','" . $_SESSION["qb"] . "','" . $_SESSION["rb"] . "','" . $_SESSION["wr"] . "')";
 $success = $conn->query($query);
  
@@ -107,7 +113,7 @@ $conn->close();
 <p>The QB is <?=$_SESSION['qb']?></p>
 <p>The RB is <?=$_SESSION['rb']?></p>
 <p>The WR is <?=$_SESSION['wr']?></p>
-<p>The bet amount is <?=$bet?></p>
+<p>The bet amount is $<?=$bet?></p>
 </div>
 </body>
 
