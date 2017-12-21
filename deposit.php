@@ -76,18 +76,6 @@ body {margin: 0;}
 </div>
 </body>
 
-
-<?php
-// session_start();
-//   $username= $_SESSION["screenname"];
-//   $amount= $_SESSION["amount"];
-// ?>
-
- <?php  
-//     print "Welcome $username <br>"; //need session
-//     print "Balance: $ $amount <br><br>"; //need session
-// ?>
-
 <center>
 <br>
 <br>
