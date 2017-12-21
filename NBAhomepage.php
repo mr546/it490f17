@@ -27,23 +27,7 @@ body {margin: 0;}
     background-color: lightblue;
     color: white;
 }
-/**.topnav a.active{
-    background-color: #ee2211;
-    color: red;
-} **/
-/**.box1{
-    position: relative;
-    margin: auto;
-    float: center;
-    width: 400px;
-    font-family:"georgia";
-    height: 100px;
-    background-color: pink;
-    text-align: left;
-    padding-left: .5cm;
-    padding-top: .05cm;
-    padding-bottom: .8cm;
-}**/
+
  
 </style>
 
