@@ -27,24 +27,6 @@ body {margin: 0;}
     background-color: lightblue;
     color: white;
 }
-/**.topnav a.active{
-    background-color: #ee2211;
-    color: red;
-}  **/
-/* .box1{ */
-    /*position: relative;
-    margin: auto;
-    float: center;
-    width: 400px;
-    font-family:"georgia";
-    height: 150px;
-    background-color: black;
-    color: white;
-    text-align: left;
-    padding-left: .5cm;
-    padding-top: .05cm;
-    padding-bottom: .8cm;
-}*/
 
     
 </style>
@@ -94,18 +76,6 @@ $_SESSION['wr'] = $wr;
 ?>
 
 <style>
-/*.box1{
-    position: relative;
-    /**margin: auto;**/
-    /*float: center;
-    width: 400px;
-    font-family:"georgia";
-    height: 100px;
-    background-color: black;
-    text-align: left;
-    padding-left: .5cm;*/
-    /**padding-top: .05cm;
-    padding-bottom: .8cm;*/
 .box1{
     position: relative;
     margin: auto;
@@ -118,8 +88,8 @@ $_SESSION['wr'] = $wr;
     border: 2px solid;
     text-align: left;
     padding-left: .5cm;
-    padding-top: .05cm;
-    padding-bottom: .8cm;
+    padding-top: .03cm;
+    padding-bottom: .5cm;
     background-color: black| transparent;
     background: rgba(225, 225, 225, .59);
 }
@@ -142,7 +112,7 @@ $_SESSION['wr'] = $wr;
 <body>
 
 
-<form name="thisForm" action="insertBets.php" method="post" style="width: 410px; padding-bottom: .8cm; padding-top: .05cm; background-color: #000000; background-color: black| transparent; background: rgba(225, 225, 225, .59);border: 2px solid;">
+<form name="thisForm" action="insertBets.php" method="post" style="width: 320px; padding-bottom: .5cm; padding-top: .03cm; background-color: #000000; background-color: black| transparent; background: rgba(225, 225, 225, .59);border: 2px solid;">
 
 <h2><font face="georgia" size="3" color="black"><center>Place your bet below</center></h2> 
     
